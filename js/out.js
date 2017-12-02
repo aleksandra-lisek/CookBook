@@ -9590,6 +9590,8 @@ module.exports = getHostComponentFromComposite;
 "use strict";
 
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(82);
 
 var _react2 = _interopRequireDefault(_react);
@@ -9600,9 +9602,109 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-document.addEventListener('DOMContentLoaded', function () {
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-   _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('app'));
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+document.addEventListener('DOMContentLoaded', function () {
+    var Header = function (_React$Component) {
+        _inherits(Header, _React$Component);
+
+        function Header() {
+            _classCallCheck(this, Header);
+
+            return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+        }
+
+        _createClass(Header, [{
+            key: 'render',
+            value: function render() {
+                return _react2.default.createElement(
+                    'header',
+                    null,
+                    'CookBook'
+                );
+            }
+        }]);
+
+        return Header;
+    }(_react2.default.Component);
+
+    var Footer = function (_React$Component2) {
+        _inherits(Footer, _React$Component2);
+
+        function Footer() {
+            _classCallCheck(this, Footer);
+
+            return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+        }
+
+        _createClass(Footer, [{
+            key: 'render',
+            value: function render() {
+                return _react2.default.createElement(
+                    'footer',
+                    null,
+                    'Created by ',
+                    _react2.default.createElement(
+                        'a',
+                        { href: '#' },
+                        'Aleksandra Lisek'
+                    )
+                );
+            }
+        }]);
+
+        return Footer;
+    }(_react2.default.Component);
+
+    var Body = function (_React$Component3) {
+        _inherits(Body, _React$Component3);
+
+        function Body() {
+            _classCallCheck(this, Body);
+
+            return _possibleConstructorReturn(this, (Body.__proto__ || Object.getPrototypeOf(Body)).apply(this, arguments));
+        }
+
+        _createClass(Body, [{
+            key: 'render',
+            value: function render() {
+                return _react2.default.createElement('div', { className: 'book-body' });
+            }
+        }]);
+
+        return Body;
+    }(_react2.default.Component);
+
+    var App = function (_React$Component4) {
+        _inherits(App, _React$Component4);
+
+        function App() {
+            _classCallCheck(this, App);
+
+            return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+        }
+
+        _createClass(App, [{
+            key: 'render',
+            value: function render() {
+                return _react2.default.createElement(
+                    'div',
+                    { className: 'all' },
+                    _react2.default.createElement(Header, null),
+                    _react2.default.createElement(Body, null),
+                    _react2.default.createElement(Footer, null)
+                );
+            }
+        }]);
+
+        return App;
+    }(_react2.default.Component);
+
+    _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('app'));
 });
 
 /***/ }),
