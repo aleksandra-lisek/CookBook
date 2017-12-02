@@ -9600,6 +9600,10 @@ var _reactDom = __webpack_require__(98);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _RecipeArea = __webpack_require__(184);
+
+var _RecipeArea2 = _interopRequireDefault(_RecipeArea);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9672,7 +9676,11 @@ document.addEventListener('DOMContentLoaded', function () {
         _createClass(Body, [{
             key: 'render',
             value: function render() {
-                return _react2.default.createElement('div', { className: 'book-body' });
+                return _react2.default.createElement(
+                    'div',
+                    { className: 'book-body' },
+                    _react2.default.createElement(_RecipeArea2.default, null)
+                );
             }
         }]);
 
@@ -22179,6 +22187,156 @@ var ReactDOMInvalidARIAHook = {
 
 module.exports = ReactDOMInvalidARIAHook;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 184 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(82);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(98);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _RecipeBox = __webpack_require__(185);
+
+var _RecipeBox2 = _interopRequireDefault(_RecipeBox);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var RecipeArea = function (_React$Component) {
+    _inherits(RecipeArea, _React$Component);
+
+    function RecipeArea() {
+        _classCallCheck(this, RecipeArea);
+
+        return _possibleConstructorReturn(this, (RecipeArea.__proto__ || Object.getPrototypeOf(RecipeArea)).apply(this, arguments));
+    }
+
+    _createClass(RecipeArea, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'RecipeArea' },
+                _react2.default.createElement(_RecipeBox2.default, null)
+            );
+        }
+    }]);
+
+    return RecipeArea;
+}(_react2.default.Component);
+
+exports.default = RecipeArea;
+
+/***/ }),
+/* 185 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(82);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(98);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Recipe = function (_React$Component) {
+    _inherits(Recipe, _React$Component);
+
+    function Recipe() {
+        _classCallCheck(this, Recipe);
+
+        return _possibleConstructorReturn(this, (Recipe.__proto__ || Object.getPrototypeOf(Recipe)).apply(this, arguments));
+    }
+
+    _createClass(Recipe, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'Recipe' },
+                _react2.default.createElement(
+                    'span',
+                    null,
+                    this.props.name
+                )
+            );
+        }
+    }]);
+
+    return Recipe;
+}(_react2.default.Component);
+
+var RecipeBox = function (_React$Component2) {
+    _inherits(RecipeBox, _React$Component2);
+
+    function RecipeBox(props) {
+        _classCallCheck(this, RecipeBox);
+
+        var _this2 = _possibleConstructorReturn(this, (RecipeBox.__proto__ || Object.getPrototypeOf(RecipeBox)).call(this, props));
+
+        _this2.state = {
+            recipes: [{ name: "Spaghtetti" }, { name: "Chicken soup" }, { name: "Brownie" }]
+        };
+        return _this2;
+    }
+
+    _createClass(RecipeBox, [{
+        key: 'render',
+        value: function render() {
+            var recipes = this.state.recipes.map(function (recipe) {
+                return _react2.default.createElement(Recipe, {
+                    key: recipe.name,
+                    name: recipe.name });
+            });
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'RecipeBox' },
+                recipes
+            );
+        }
+    }]);
+
+    return RecipeBox;
+}(_react2.default.Component);
+
+exports.default = RecipeBox;
 
 /***/ })
 /******/ ]);

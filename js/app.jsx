@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import RecipeArea from './RecipeArea.jsx';
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -19,7 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     class Body extends React.Component {
         render(){
-            return <div className="book-body"></div>
+            return <div className="book-body">
+                <RecipeArea/>
+            </div>
         }
     }
 
