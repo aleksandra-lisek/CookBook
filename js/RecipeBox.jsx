@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Ingredients from './Ingredients.jsx';
 
 class NewRecipeBtn extends React.Component {
     render() {
@@ -7,10 +8,46 @@ class NewRecipeBtn extends React.Component {
     }
 }
 
+class Arrow extends React.Component {
+
+    render(){
+        let arrow = <div onClick={this.props.arrowsChange} className="close-recipe"> </div>;
+
+        if(this.props.isExpand){
+            arrow = <div onClick={this.props.arrowsChange} className="expand-recipe"></div>
+        }
+        console.log(arrow);
+
+        return <div>{arrow}</div>
+    }
+}
 
 class Recipe extends React.Component {
+    constructor() {
+        super();
+        this.state={
+            arrowExpand:true,
+        }
+    }
+
+    arrowHandler=()=>{
+        const arrowBool=this.state.arrowExpand;
+        this.setState({
+            arrowExpand: !arrowBool,
+        })
+    }
     render() {
-            return <div className="Recipe"><span>{this.props.name}</span></div>
+        let ingredients = <Ingredients/>;
+        if(this.state.arrowExpand){ ingredients= null}
+            return <div className="recipes">
+                        <div className="Recipe"><span>{this.props.name}</span>
+                            <Arrow
+                                arrowsChange={this.arrowHandler}
+                                isExpand={this.state.arrowExpand}/>
+                        </div>
+                        {ingredients}
+                    </div>
+
     }
 }
 

@@ -22267,6 +22267,10 @@ var _reactDom = __webpack_require__(34);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _Ingredients = __webpack_require__(186);
+
+var _Ingredients2 = _interopRequireDefault(_Ingredients);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22298,26 +22302,84 @@ var NewRecipeBtn = function (_React$Component) {
     return NewRecipeBtn;
 }(_react2.default.Component);
 
-var Recipe = function (_React$Component2) {
-    _inherits(Recipe, _React$Component2);
+var Arrow = function (_React$Component2) {
+    _inherits(Arrow, _React$Component2);
+
+    function Arrow() {
+        _classCallCheck(this, Arrow);
+
+        return _possibleConstructorReturn(this, (Arrow.__proto__ || Object.getPrototypeOf(Arrow)).apply(this, arguments));
+    }
+
+    _createClass(Arrow, [{
+        key: 'render',
+        value: function render() {
+            var arrow = _react2.default.createElement(
+                'div',
+                { onClick: this.props.arrowsChange, className: 'close-recipe' },
+                ' '
+            );
+
+            if (this.props.isExpand) {
+                arrow = _react2.default.createElement('div', { onClick: this.props.arrowsChange, className: 'expand-recipe' });
+            }
+            console.log(arrow);
+
+            return _react2.default.createElement(
+                'div',
+                null,
+                arrow
+            );
+        }
+    }]);
+
+    return Arrow;
+}(_react2.default.Component);
+
+var Recipe = function (_React$Component3) {
+    _inherits(Recipe, _React$Component3);
 
     function Recipe() {
         _classCallCheck(this, Recipe);
 
-        return _possibleConstructorReturn(this, (Recipe.__proto__ || Object.getPrototypeOf(Recipe)).apply(this, arguments));
+        var _this3 = _possibleConstructorReturn(this, (Recipe.__proto__ || Object.getPrototypeOf(Recipe)).call(this));
+
+        _this3.arrowHandler = function () {
+            var arrowBool = _this3.state.arrowExpand;
+            _this3.setState({
+                arrowExpand: !arrowBool
+            });
+        };
+
+        _this3.state = {
+            arrowExpand: true
+        };
+        return _this3;
     }
 
     _createClass(Recipe, [{
         key: 'render',
         value: function render() {
+            var ingredients = _react2.default.createElement(_Ingredients2.default, null);
+            if (this.state.arrowExpand) {
+                ingredients = null;
+            }
             return _react2.default.createElement(
                 'div',
-                { className: 'Recipe' },
+                { className: 'recipes' },
                 _react2.default.createElement(
-                    'span',
-                    null,
-                    this.props.name
-                )
+                    'div',
+                    { className: 'Recipe' },
+                    _react2.default.createElement(
+                        'span',
+                        null,
+                        this.props.name
+                    ),
+                    _react2.default.createElement(Arrow, {
+                        arrowsChange: this.arrowHandler,
+                        isExpand: this.state.arrowExpand })
+                ),
+                ingredients
             );
         }
     }]);
@@ -22325,18 +22387,18 @@ var Recipe = function (_React$Component2) {
     return Recipe;
 }(_react2.default.Component);
 
-var RecipeBox = function (_React$Component3) {
-    _inherits(RecipeBox, _React$Component3);
+var RecipeBox = function (_React$Component4) {
+    _inherits(RecipeBox, _React$Component4);
 
     function RecipeBox(props) {
         _classCallCheck(this, RecipeBox);
 
-        var _this3 = _possibleConstructorReturn(this, (RecipeBox.__proto__ || Object.getPrototypeOf(RecipeBox)).call(this, props));
+        var _this4 = _possibleConstructorReturn(this, (RecipeBox.__proto__ || Object.getPrototypeOf(RecipeBox)).call(this, props));
 
-        _this3.state = {
+        _this4.state = {
             recipes: [{ name: "Spaghtetti" }, { name: "Chicken soup" }, { name: "Brownie" }]
         };
-        return _this3;
+        return _this4;
     }
 
     _createClass(RecipeBox, [{
@@ -22361,6 +22423,56 @@ var RecipeBox = function (_React$Component3) {
 }(_react2.default.Component);
 
 exports.default = RecipeBox;
+
+/***/ }),
+/* 186 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(32);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(34);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Ingredients = function (_React$Component) {
+    _inherits(Ingredients, _React$Component);
+
+    function Ingredients() {
+        _classCallCheck(this, Ingredients);
+
+        return _possibleConstructorReturn(this, (Ingredients.__proto__ || Object.getPrototypeOf(Ingredients)).apply(this, arguments));
+    }
+
+    _createClass(Ingredients, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement('div', { className: 'Ingredients' });
+        }
+    }]);
+
+    return Ingredients;
+}(_react2.default.Component);
+
+exports.default = Ingredients;
 
 /***/ })
 /******/ ]);
