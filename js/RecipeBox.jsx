@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+class NewRecipeBtn extends React.Component {
+    render() {
+        return <div className="NewRecipeBtn">Add New Recipe</div>
+    }
+}
 
 
 class Recipe extends React.Component {
@@ -29,6 +34,8 @@ class Recipe extends React.Component {
         });
 
         return <div className ='RecipeBox'>
+
+                <NewRecipeBtn/>
             {recipes}
         </div>
     }

@@ -45,7 +45,6 @@ footer{
 
 
 .RecipeArea{
-    justify-content: center;
     width: 900px;
     height: 500px;
     background-color:rgba(198, 198, 198, 0.1);
@@ -54,18 +53,28 @@ footer{
     font-family: 'Roboto', sans-serif;
 
 
+
+
+}
+.NewRecipeBtn{
+    width: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #008f95;
+    color: #FFF;
+    font-weight: bold;
+    align-self:center;
 }
 
 .RecipeBox{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    justify-content: baseline;
+    width: 80%;
 
 .Recipe{
     border-bottom: 1px solid #E24E42;
-    width: 80%;
     font-size: 30px;
     text-align: center;
     padding-top: 15px;
