@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import RecipeArea from './RecipeArea.jsx';
+import NewRecipeBtn from './NewRecipeBtn.jsx';
 
 
 
@@ -9,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     class Header extends React.Component {
 
         render(){
-            return <header>CookBook</header>
+            return <header><h1>CookBook</h1><NewRecipeBtn/></header>
         }
     }
 

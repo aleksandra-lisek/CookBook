@@ -1,12 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import IngredientsBox from './Ingredients.jsx';
+import IngredientsBox from './IngredientsBox.jsx';
 
-class NewRecipeBtn extends React.Component {
-    render() {
-        return <div className="NewRecipeBtn">Add New Recipe</div>
-    }
-}
+
 
 class Arrow extends React.Component {
 
@@ -82,7 +78,6 @@ class Recipe extends React.Component {
 
         return <div className ='RecipeBox'>
 
-                <NewRecipeBtn/>
             {recipes}
         </div>
     }
